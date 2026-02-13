@@ -26,8 +26,8 @@ import { initPushNotifications } from './lib/pushNotifications';
 
 // Configuración dinámica del servidor: Usa la IP del VPS si está definida, si no, usa localhost
 const getBackendUrl = () => {
-  // URL SEGURA CON CLOUDFLARE TUNNEL (HTTPS)
-  return 'https://maryland-periodically-troubleshooting-alloy.trycloudflare.com';
+  // URL SEGURA CON CLOUDFLARE TUNNEL (HTTPS/PM2)
+  return 'https://oecd-ultimate-servers-drilling.trycloudflare.com';
 };
 
 const socket = io(getBackendUrl(), {
