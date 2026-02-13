@@ -394,6 +394,10 @@ setInterval(async () => {
 io.on('connection', (socket) => {
     socket.emit('bot-status-updated', botActive);
     socket.emit('api-keys-status', keyStatus);
+    socket.emit('bot-settings', {
+        instructions: aiInstructions,
+        businessPlan: businessPlan
+    });
     socket.on('register-push-token', (token) => pushTokens.add(token));
     socket.on('toggle-bot', async (active) => {
         botActive = active;
@@ -403,10 +407,12 @@ io.on('connection', (socket) => {
     socket.on('update-instructions', async (text) => {
         aiInstructions = text;
         await supabase.from('bot_settings').upsert({ key: 'ai_instructions', value: text });
+        io.emit('bot-settings', { instructions: aiInstructions, businessPlan: businessPlan });
     });
     socket.on('update-business-plan', async (text) => {
         businessPlan = text;
         await supabase.from('bot_settings').upsert({ key: 'business_plan', value: text });
+        io.emit('bot-settings', { instructions: aiInstructions, businessPlan: businessPlan });
     });
     socket.on('get-api-keys-status', () => { socket.emit('api-keys-status', keyStatus); });
     socket.on('get-groups', async () => {

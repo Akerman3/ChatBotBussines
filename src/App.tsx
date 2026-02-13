@@ -96,6 +96,16 @@ function App() {
     socket.on('groups-list', (data) => setGroups(data));
     socket.on('group-settings-list', (data) => setGroupSettings(data));
     socket.on('api-keys-status', (data) => setApiKeysStatus(data));
+    socket.on('bot-settings', (data) => {
+      if (data.instructions) {
+        setInstructions(data.instructions);
+        localStorage.setItem('chatbot_instructions', data.instructions);
+      }
+      if (data.businessPlan) {
+        setBusinessPlan(data.businessPlan);
+        localStorage.setItem('chatbot_businessPlan', data.businessPlan);
+      }
+    });
     socket.on('new-interaction', (data) => {
       addLog(`📩 Mensaje de ${data.from}: ${data.message}`, 'cyan');
       if (data.isSale) {
@@ -118,6 +128,7 @@ function App() {
       socket.off('groups-list');
       socket.off('new-interaction');
       socket.off('lead-alert');
+      socket.off('bot-settings');
     };
   }, []);
 
@@ -246,6 +257,7 @@ function App() {
   const saveInstructions = () => {
     setSavingInstructions(true);
     socket.emit('update-instructions', instructions);
+    localStorage.setItem('chatbot_instructions', instructions);
     setTimeout(() => {
       setSavingInstructions(false);
       setSaveSuccessInstructions(true);
@@ -256,6 +268,7 @@ function App() {
   const saveBusinessPlan = () => {
     setSavingBusinessPlan(true);
     socket.emit('update-business-plan', businessPlan);
+    localStorage.setItem('chatbot_businessPlan', businessPlan);
     setTimeout(() => {
       setSavingBusinessPlan(false);
       setSaveSuccessBusinessPlan(true);
