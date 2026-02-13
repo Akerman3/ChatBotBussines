@@ -26,8 +26,8 @@ import { initPushNotifications } from './lib/pushNotifications';
 
 // Configuración dinámica del servidor: Usa la IP del VPS si está definida, si no, usa localhost
 const getBackendUrl = () => {
-  // URL DEL VPS CON PUERTO 3001 (Sincronizado con .env)
-  return 'http://198.251.79.175:3001';
+  // URL SEGURA CON CLOUDFLARE TUNNEL (HTTPS)
+  return 'https://maryland-periodically-troubleshooting-alloy.trycloudflare.com';
 };
 
 const socket = io(getBackendUrl(), {
