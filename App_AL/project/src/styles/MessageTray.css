@@ -1,0 +1,19 @@
+/* src/styles/MessageTray.css (o donde tengas los estilos) */
+.msg-body.clamped {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;   /* ⇐ 3 líneas */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.msg-body.expanded {
+  display: block;
+}
+
+.see-more, .see-less {
+  padding: 4px 0;
+  font-weight: 700;
+  color: #1454b4;
+  background: transparent;
+  border: 0;
+}

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "235588078481",
+    "project_id": "businesschat-admin",
+    "storage_bucket": "businesschat-admin.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:235588078481:android:c951e33fd6f6f66b6c6830",
+        "android_client_info": {
+          "package_name": "com.businesschat.admin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8JBR0o7c7vD9WLm8QnKA7tQLmUCfXb2U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">ALcalculadora</string>
+    <string name="title_activity_main">ALcalculadora</string>
+    <string name="package_name">com.alcalculadora.app</string>
+    <string name="custom_url_scheme">com.alcalculadora.app</string>
+</resources>

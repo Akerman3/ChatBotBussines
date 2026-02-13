@@ -1,0 +1,25 @@
+{
+  "name": "functions",
+  "private": true,
+  "type": "module",
+  "main": "lib/index.js",
+  "engines": {
+    "node": "20"
+  },
+  "scripts": {
+    "build": "tsc -p ./tsconfig.json",
+    "deploy": "npm run build && firebase deploy --only functions",
+    "lint": "echo skip",
+    "build:only": "tsc -p ./tsconfig.json"
+  },
+  "dependencies": {
+    "@googleapis/androidpublisher": "^14.0.0",
+    "firebase-admin": "^13.5.0",
+    "firebase-functions": "^6.4.0",
+    "google-auth-library": "^9.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4"
+  }
+}
+

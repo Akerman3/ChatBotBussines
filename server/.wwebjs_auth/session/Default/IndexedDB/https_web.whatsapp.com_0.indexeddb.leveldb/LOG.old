@@ -1,0 +1,25 @@
+2026/02/06-16:03:30.550 4428 Reusing MANIFEST C:\Users\Uriel\Downloads\App para chatbot\Solo APP para pruebas\server\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2026/02/06-16:03:30.551 4428 Recovering log #806
+2026/02/06-16:03:30.581 4428 Reusing old log C:\Users\Uriel\Downloads\App para chatbot\Solo APP para pruebas\server\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000806.log 
+2026/02/06-16:03:47.779 4428 Level-0 table #812: started
+2026/02/06-16:03:47.834 4428 Level-0 table #812: 1179413 bytes OK
+2026/02/06-16:03:47.841 4428 Delete type=0 #806
+2026/02/06-16:03:47.850 4428 Compacting 1@1 + 2@2 files
+2026/02/06-16:03:47.989 4428 Generated table #813@1: 51998 keys, 2225085 bytes
+2026/02/06-16:03:48.141 4428 Generated table #814@1: 31814 keys, 1934159 bytes
+2026/02/06-16:03:48.141 4428 Compacted 1@1 + 2@2 files => 4159244 bytes
+2026/02/06-16:03:48.143 4428 compacted to: files[ 0 0 2 0 0 0 0 ]
+2026/02/06-16:03:48.143 4428 Delete type=2 #808
+2026/02/06-16:03:48.143 4428 Delete type=2 #809
+2026/02/06-16:03:48.143 4428 Delete type=2 #812
+2026/02/06-16:05:34.384 4428 Level-0 table #816: started
+2026/02/06-16:05:34.439 4428 Level-0 table #816: 1125930 bytes OK
+2026/02/06-16:05:34.445 4428 Delete type=0 #811
+2026/02/06-16:05:34.483 4428 Compacting 1@1 + 2@2 files
+2026/02/06-16:05:34.644 4428 Generated table #817@1: 51694 keys, 2224718 bytes
+2026/02/06-16:05:34.775 4428 Generated table #818@1: 33434 keys, 2016834 bytes
+2026/02/06-16:05:34.775 4428 Compacted 1@1 + 2@2 files => 4241552 bytes
+2026/02/06-16:05:34.779 4428 compacted to: files[ 0 0 2 0 0 0 0 ]
+2026/02/06-16:05:34.779 4428 Delete type=2 #813
+2026/02/06-16:05:34.779 4428 Delete type=2 #814
+2026/02/06-16:05:34.779 4428 Delete type=2 #816

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "338636322262",
+    "project_id": "alcalculadorav2",
+    "storage_bucket": "alcalculadorav2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:338636322262:android:ba3c5b0ed00213fdb3a077",
+        "android_client_info": {
+          "package_name": "com.alcalculadora.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "338636322262-0ilott68parhouovvmsbpo7t3q6uejvp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.alcalculadora.app",
+            "certificate_hash": "a87f8655104d014c8c64d08c821e1e5bfeb8a80f"
+          }
+        },
+        {
+          "client_id": "338636322262-tgv8ase2oj0se7g8l2091b33rd4t746u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLx-cNIPPZy_Nq6fu08jtzwhG-wg8S8ns"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "338636322262-tgv8ase2oj0se7g8l2091b33rd4t746u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

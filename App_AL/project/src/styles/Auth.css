@@ -1,0 +1,356 @@
+/* ===== Auth.css - Login y Signup con tarjeta animada ===== */
+
+.login-container {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #0d47a1, #757575);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 60px;
+  padding-bottom: 40px;
+  font-family: 'Nunito', sans-serif;
+  /* NUEVA: Animación de entrada */
+  animation: fadeIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* NUEVA: Animación fade simple */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Header con título y línea */
+.login-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+  /* NUEVA: Animación desde arriba */
+  animation: slideDown 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.1s backwards;
+}
+
+/* NUEVA: Animación desde arriba */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.login-title {
+  font-size: 72px;
+  color: white;
+  margin: 0;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+/* Línea divisoria */
+.login-title-underline {
+  width: 280px;
+  height: 2px;
+  background-color: white;
+  margin: 10px 0;
+}
+
+.login-subtitle {
+  font-size: 20px;
+  color: white;
+  margin: 10px 0 0;
+  font-weight: 400;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+}
+
+/* ===== TARJETA CON ESTILO MODERNO (como Subscription) ===== */
+.login-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  
+  padding: 30px 20px;
+  width: 90%;
+  max-width: 350px;
+  
+  /* Gradiente de fondo oscuro con múltiples capas (igual que Subscription) */
+  background-color: hsl(240, 15%, 9%);
+  background-image: 
+    radial-gradient(at 88% 40%, hsla(240, 15%, 9%, 1) 0px, transparent 85%),
+    radial-gradient(at 49% 30%, hsla(240, 15%, 9%, 1) 0px, transparent 85%),
+    radial-gradient(at 14% 26%, hsla(240, 15%, 9%, 1) 0px, transparent 85%),
+    radial-gradient(at 0% 64%, hsl(210, 99%, 26%) 0px, transparent 85%),
+    radial-gradient(at 41% 94%, hsl(210, 97%, 36%) 0px, transparent 85%),
+    radial-gradient(at 100% 99%, hsl(210, 94%, 13%) 0px, transparent 85%);
+  
+  border-radius: 24px;
+  box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25) inset;
+  box-sizing: border-box;
+  text-align: center;
+  /* NUEVA: Animación desde abajo */
+  animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.2s backwards;
+}
+
+/* NUEVA: Animación desde abajo */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Contenido de la tarjeta ===== */
+.login-description {
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.login-error {
+  color: #ff6b6b;
+  font-size: 14px;
+  margin: 10px 0;
+  background: rgba(255, 107, 107, 0.15);
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 107, 107, 0.3);
+}
+
+.login-input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+
+.login-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.login-input:focus {
+  border: 1px solid rgba(49, 217, 246, 0.6);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* ===== Botones ===== */
+.btn-login {
+  position: relative;
+  cursor: pointer;
+  padding: 12px;
+  width: 100%;
+  overflow: hidden;
+  
+  background-color: #31d9f6;
+  
+  font-size: 16px;
+  font-weight: 800;
+  color: white;
+  text-shadow: 0px 0px 1px black;
+  
+  border: 0;
+  border-radius: 12px;
+  box-shadow: inset -1px -1px 3px white;
+  margin-top: 20px;
+  
+  transition: all 0.2s;
+}
+
+.btn-login::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(227, 227, 227, 0) 0%,
+    rgba(227, 227, 227, 0) 40%,
+    rgba(227, 227, 227, 0.5) 50%,
+    rgba(227, 227, 227, 0) 60%,
+    rgba(227, 227, 227, 0) 100%
+  );
+  animation: shimmer 2s linear infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.btn-login:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(49, 217, 246, 0.4), inset -1px -1px 3px white;
+}
+
+.btn-login:active {
+  transform: translateY(0);
+}
+
+/* ===== Enlace de contraseña olvidada ===== */
+.forgot-password {
+  color: #ff6b6b;
+  font-size: 13px;
+  text-align: center;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  user-select: none;
+  transition: opacity 0.2s;
+}
+
+.forgot-password:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+/* ===== Divisor ===== */
+.divider {
+  text-align: center;
+  margin: 10px 0 8px;
+  font-size: 12.5px;
+  font-weight: 700;
+  opacity: 0.9;
+  user-select: none;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ===== Botón Google (estilo delgado con icono en cuadro blanco) ===== */
+.btn-google {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 44px;
+  padding: 0 16px;
+  background: #1083ff;
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,.12);
+  margin-top: 12px;
+}
+
+.btn-google:hover:not(:disabled) { 
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px rgba(16, 131, 255, 0.3);
+}
+
+.btn-google:active:not(:disabled) { 
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0,0,0,.20), inset 0 2px 3px rgba(0,0,0,.08);
+}
+
+.btn-google:focus { 
+  outline: 2px solid rgba(16,131,255,.35); 
+  outline-offset: 2px; 
+}
+
+.btn-google:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Cuadro blanco pegado al borde izquierdo */
+.btn-google__iconbox {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  background: #fff;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* La "G" dentro del cuadro */
+.btn-google__icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Texto */
+.btn-google__text {
+  white-space: nowrap;
+  user-select: none;
+}
+
+/* ===== Footer ===== */
+.login-footer {
+  font-size: 13px;
+  margin-top: 15px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.link {
+  color: #31d9f6;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.link:hover {
+  opacity: 0.8;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 480px) {
+  .login-title {
+    font-size: 40px;
+  }
+
+  .login-subtitle {
+    font-size: 20px;
+  }
+
+  .login-card {
+    max-width: 320px;
+    padding: 25px 18px;
+  }
+}
+/* ===== Reducción de movimiento para accesibilidad ===== */
+@media (prefers-reduced-motion: reduce) {
+  .login-container,
+  .login-header,
+  .login-card,
+  * {
+    animation-duration: 0.01s !important;
+    animation-delay: 0s !important;
+    transition-duration: 0.01s !important;
+  }
+}

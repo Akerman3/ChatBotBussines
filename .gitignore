@@ -1,0 +1,9 @@
+# SENSITIVE FILES
+.env
+firebase-admin-key.json
+server/auth_info_baileys
+auth_info_baileys
+*.zip
+backups/
+dist/
+node_modules/

@@ -1,0 +1,335 @@
+/* src/styles/MainMenu.css */
+
+/* === Fondo del home (opcional si usas bg-[#043464]) === */
+.main-bg {
+  background: #043464;
+}
+
+/* ───────────────────────────
+   Botón del engrane (arriba izq.)
+   ─────────────────────────── */
+.mm-gear {
+  background: transparent;
+  border: none;
+  padding: 0;
+  line-height: 0;
+  cursor: pointer;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+}
+.mm-gear:active { transform: scale(0.98); }
+.mm-gear-icon {
+  width: 44px;
+  height: 44px;
+  color: #ffffff;
+  transition: transform 280ms ease;
+}
+.mm-gear.is-open .mm-gear-icon { transform: rotate(-180deg); }
+
+/* ───────────────────────────
+   Overlay oscuro detrás del drawer
+   ─────────────────────────── */
+.mm-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 220ms ease;
+  z-index: 39;
+}
+.mm-overlay.visible { opacity: 1; pointer-events: auto; }
+
+/* ───────────────────────────
+   Drawer lateral izquierdo (menú)
+   ─────────────────────────── */
+.mm-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: min(88%, 380px);
+  background: linear-gradient(180deg, #1454b4 0%, #1a66d1 100%);
+  color: #fff;
+  border-top-right-radius: 24px;
+  border-bottom-right-radius: 24px;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.28);
+  transform: translateX(-110%);
+  transition: transform 260ms ease-in-out;
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 22px 20px 28px;
+  overflow-y: auto;
+}
+.mm-drawer.show { transform: translateX(0); }
+
+.mm-drawer-title {
+  font-weight: 800;
+  font-size: 22px;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+/* ───────────────────────────
+   Filas y divisores (sin “burbujas”)
+   ─────────────────────────── */
+.mm-row,
+.mm-acc-row,
+.mm-info-row,
+.mm-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 4px;
+}
+
+.mm-divider {
+  height: 1px;
+  background: rgba(255,255,255,0.30);
+  margin: 8px 0;
+}
+
+/* Si usas contenedores tipo “card”, deja el borde inferior como separador */
+.mm-card,
+.mm-item {
+  border-bottom: 1px solid rgba(255,255,255,0.30);
+}
+
+/* ───────────────────────────
+   Cuenta (avatar + datos)
+   ─────────────────────────── */
+.mm-acc-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: rgba(255,255,255,0.25);
+  flex: 0 0 48px;
+}
+.mm-acc-initial {
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  color: #fff;
+}
+.mm-acc-name {
+  font-weight: 700;
+  font-size: 14px;
+  color: #fff;
+}
+.mm-acc-mail {
+  font-size: 12px;
+  color: rgba(255,255,255,0.9);
+  margin-top: 2px;
+}
+
+/* ───────────────────────────
+   Íconos PNG del drawer (alerta, tarjeta, salida, casa)
+   Tamaño UNIFORME y consistente
+   ─────────────────────────── */
+.mm-icon {
+  width: 28px !important;
+  height: 28px !important;
+  flex: 0 0 28px !important;
+  object-fit: contain;
+  display: block;
+  max-width: none !important;
+}
+.mm-drawer img.mm-icon {
+  width: 28px !important;
+  height: 28px !important;
+  flex-basis: 28px !important;
+}
+
+@media (max-width: 360px) {
+  .mm-icon,
+  .mm-drawer img.mm-icon {
+    width: 26px !important;
+    height: 26px !important;
+    flex-basis: 26px !important;
+  }
+}
+
+/* ───────────────────────────
+   Texto informativo de fecha
+   ─────────────────────────── */
+.mm-info-label {
+  font-size: 12px;
+  color: rgba(255,255,255,0.9);
+}
+.mm-info-date  {
+  font-weight: 800;
+  color: #fff;
+  font-size: 14px;
+}
+
+/* ───────────────────────────
+   Acciones (botones de lista)
+   ─────────────────────────── */
+.mm-item,
+.mm-action {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: inherit;
+  text-align: left;
+}
+.mm-item:active,
+.mm-action:active { transform: scale(0.995); }
+
+.mm-item .mm-item-title,
+.mm-action .mm-action-title {
+  font-weight: 800;
+  color: #fff;
+  font-size: 15px;
+  white-space: nowrap;
+}
+.mm-item .mm-item-sub,
+.mm-action .mm-action-sub {
+  font-size: 12px;
+  color: rgba(255,255,255,0.9);
+  margin-top: 2px;
+}
+
+/* ───────────────────────────
+   Footer links
+   ─────────────────────────── */
+.mm-footer-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: rgba(255,255,255,0.9);
+  font-size: 12px;
+  padding-top: 8px;
+}
+.mm-link {
+  color: inherit;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+.mm-sep { opacity: 0.5; }
+
+/* ───────────────────────────
+   NUEVO: Fila superior derecha: Bold (izq) + campanita (der)
+   ─────────────────────────── */
+.mm-top-right{
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 20;
+}
+
+/* Contenedor del botón de Bold (por si abre popover) */
+.mm-bold-wrap{
+  position: relative;
+  line-height: 0;
+}
+
+/* Área táctil para el botón de Bold (aumentada) */
+.mm-bold-btn{
+  background: transparent;
+  border: 0;
+  width: 38px;   /* antes 34px */
+  height: 38px;  /* antes 34px */
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+/* ───────────────────────────
+   ESTILOS DEL POPOVER DE BOLD
+   ─────────────────────────── */
+.mm-bold-popover{
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: min(86vw, 320px);
+  background: #ffffff !important;
+  color: #0b1b32;
+  border-radius: 14px;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.28);
+  padding: 10px;
+  z-index: 60;
+  contain: layout paint;
+  isolation: isolate;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  -webkit-font-smoothing: antialiased;
+  backface-visibility: hidden;
+  letter-spacing: normal;
+  text-shadow: none;
+}
+
+.mm-bold-item{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border: none;
+  background: transparent;
+  text-align: left;
+  border-radius: 12px;
+}
+.mm-bold-item:active{ background: #f2f5ff; }
+
+.mm-bold-dot{
+  width: 36px;
+  height: 36px;
+  border-radius: 9999px;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+}
+.mm-bold-dot.dl{ background: #E8F7EB; color: #19a34a; }
+.mm-bold-dot.rs{ background: #EAF1FF; color: #3b82f6; }
+
+.mm-bold-title{
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 1.1;
+  color: #0b1b32;
+  margin: 0;
+}
+.mm-bold-sub{
+  font-size: 13px;
+  line-height: 1.25;
+  color: #6b7280;
+  margin-top: 2px;
+}
+
+/* === Backup icon animations === */
+.alc-backup-icon {
+  display: block;
+  pointer-events: none;       /* el click lo captura el botón */
+  user-select: none;
+  -webkit-user-drag: none;
+  image-rendering: auto;
+}
+
+.alc-rotate-180 {
+  animation: alc-rot-180 240ms ease-out both;
+}
+.alc-rotate-360 {
+  animation: alc-rot-360 420ms ease-in-out both;
+}
+
+@keyframes alc-rot-180 {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(180deg); }
+}
+@keyframes alc-rot-360 {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}

@@ -1,0 +1,9 @@
+{
+  "appId": "com.businesschat.admin",
+  "appName": "BusinessChat Admin",
+  "webDir": "dist",
+  "bundledWebRuntime": false,
+  "server": {
+    "androidScheme": "http"
+  }
+}

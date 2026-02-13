@@ -1,0 +1,292 @@
+/* src/styles/Home.css */
+
+/* Tipografía del mock */
+@font-face {
+  font-family: 'Lemon Milk';
+  src: url('/fonts/LemonMilk-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.home-container {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  text-align: center;
+  font-family: 'Lemon Milk', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+
+  /* Degradado + halo radial + diagonales suaves (misma paleta) */
+  background:
+    radial-gradient(110% 110% at 50% -8%, #174d84 0%, #0e3e73 40%, #0b305a 70%, #092a4f 100%),
+    linear-gradient(180deg, #0b2d57 0%, #0c3a6c 55%, #0b3666 100%);
+  
+  /* NUEVA: Animación de entrada suave */
+  animation: fadeZoomIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* NUEVA: Animación de entrada para Home */
+@keyframes fadeZoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* "Rayos"/diagonales discretas */
+.home-container::before {
+  content: "";
+  position: absolute;
+  inset: -30%;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.055) 0 8%, transparent 8% 50%, rgba(255,255,255,.055) 50% 58%, transparent 58% 100%),
+    linear-gradient(225deg, rgba(255,255,255,.055) 0 8%, transparent 8% 50%, rgba(255,255,255,.055) 50% 58%, transparent 58% 100%);
+  pointer-events: none;
+  transform: scale(1.08);
+}
+
+/* Menú hamburguesa — un poquito más grande */
+.menu-toggle {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 1000;
+}
+.menu-toggle .bar {
+  width: 26px;
+  height: 3.5px;
+  background-color: #fff;
+  border-radius: 2px;
+}
+
+/* Badge AL PNG */
+.al-badge-img {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  object-fit: cover;
+  user-select: none;
+  -webkit-user-drag: none;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35), inset 0 0 0 1px rgba(255,255,255,0.25);
+  z-index: 900;
+}
+
+/* Logo central */
+.logo-text {
+  margin-top: 86px;
+  font-size: 96px;
+  line-height: 1;
+  font-weight: 900;
+  text-shadow: 0 8px 24px rgba(0,0,0,.35);
+  /* NUEVA: Animación escalonada */
+  animation: slideInDown 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.1s backwards;
+}
+
+/* NUEVA: Animación desde arriba */
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.title-underline {
+  width: 60%;
+  max-width: 520px;
+  margin: 10px auto 8px;
+  height: 2.5px;
+  background: rgba(255,255,255,0.85);
+  border-radius: 2px;
+  /* NUEVA: Animación de escala */
+  animation: scaleIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.3s backwards;
+}
+
+/* NUEVA: Animación de escala horizontal */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+.subtitle {
+  font-size: 16px;
+  letter-spacing: 3px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  text-shadow: 0 6px 16px rgba(0,0,0,.35);
+  /* NUEVA: Animación desde abajo */
+  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.4s backwards;
+}
+
+/* NUEVA: Animación fade desde abajo */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Bloque CTA centrado en el cruce de la "X" === */
+.cta-wrap {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 58vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* NUEVA: Animación que mantiene el centrado */
+  animation: fadeInUpCentered 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.5s backwards;
+}
+
+/* NUEVA: Animación que combina fade, slide y centrado */
+@keyframes fadeInUpCentered {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* Botón Iniciar */
+.btn-primary {
+  background: #ffffff;
+  color: #0a3e75;
+  border: none;
+  padding: 14px 32px;
+  font-size: 20px;
+  font-weight: 900;
+  border-radius: 16px;
+  cursor: pointer;
+  box-shadow: 0 12px 26px rgba(0,0,0,0.35);
+  transition: transform .08s ease, box-shadow .12s ease, filter .12s ease;
+  margin-bottom: 14px;
+}
+.btn-primary:active {
+  transform: translateY(1px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.30);
+  filter: brightness(.97);
+}
+
+/* CTA en una sola línea */
+.cta-text {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+  text-shadow: 0 2px 8px rgba(0,0,0,.25);
+}
+.cta-text .link {
+  text-decoration: underline;
+  cursor: pointer;
+  color: #dfeaff;
+}
+
+/* Versión inferior izquierda */
+.version-text {
+  position: absolute;
+  bottom: 12px;
+  color: rgba(255,255,255,0.86);
+  font-size: 12px;
+  margin: 0;
+  text-shadow: 0 1px 4px rgba(0,0,0,.25);
+}
+.version-left {
+  left: 14px;
+  transform: none;
+}
+
+/* Menú lateral — igual que antes */
+.side-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70%;
+  height: 100%;
+  background: #ffffff;
+  padding: 60px 20px 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+  z-index: 999;
+  animation: slideIn 0.3s forwards ease-out;
+}
+@keyframes slideIn {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(0); }
+}
+.visit-title {
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+}
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #000;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+}
+.menu-item .icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+/* Ajustes de altura */
+@media (max-height: 720px) {
+  .logo-text { margin-top: 72px; font-size: 88px; }
+  .cta-wrap { top: 56vh; }
+}
+@media (min-height: 900px) {
+  .cta-wrap { top: 60vh; }
+}
+
+/* NUEVA: Reducción de movimiento para accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  .home-container,
+  .logo-text,
+  .title-underline,
+  .subtitle,
+  .cta-wrap {
+    animation-duration: 0.01s !important;
+    animation-delay: 0s !important;
+  }
+}

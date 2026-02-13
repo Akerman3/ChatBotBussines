@@ -1,0 +1,24 @@
+{
+  "appId": "com.alcalculadora.app",
+  "appName": "ALcalculadora",
+  "webDir": "dist",
+  "bundledWebRuntime": false,
+  "server": {
+    "androidScheme": "https"
+  },
+  "android": {
+    "buildOptions": {
+      "keystorePath": "my-new-key.jks",
+      "keystorePassword": "alcalculadora",
+      "keystoreAlias": "my-new-alias",
+      "keystoreAliasPassword": "alcalculadora"
+    }
+  },
+  "plugins": {
+    "FirebaseAuthentication": {
+      "providers": ["google.com"],
+      "skipNativeAuth": true
+    }
+  }
+}
+

@@ -1,0 +1,77 @@
+.three-dots-container {
+  height: 100vh;
+  background: linear-gradient(to bottom, #001F3F, #0074D9);
+  position: relative;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Icono AL */
+.al-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+}
+
+/* Botón de menú (tres barras) */
+.menu-toggle {
+  width: 30px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.menu-toggle .bar {
+  height: 4px;
+  background-color: white;
+  border-radius: 2px;
+}
+
+/* Menú lateral animado */
+.side-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70%;
+  height: 100%;
+  background: white;
+  padding: 60px 20px 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+
+  /* Animación */
+  transform: translateX(-100%);
+  animation: slideIn 0.3s forwards ease-out;
+}
+
+@keyframes slideIn {
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Ítems del menú */
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: black;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.menu-item .icon {
+  width: 24px;
+  height: 24px;
+}

@@ -1,0 +1,780 @@
+/* ===== Contenedor y fondo ===== */
+.subscription-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #0d47a1, #757575);
+  padding: 2rem 1rem 3.25rem;
+}
+
+/* ===== Header con tÃƒÂ­tulo y lÃƒÂ­nea ===== */
+.subscription-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0rem;
+  margin-bottom: 1.5rem;
+}
+
+.subscription-title-main {
+  font-size: 72px;
+  color: white;
+  margin: 0;
+  font-weight: 900;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+/* LÃƒÂ­nea divisoria */
+.subscription-title-underline {
+  width: 280px;
+  height: 2px;
+  background-color: white;
+  margin: 10px 0;
+}
+
+.subscription-subtitle {
+  font-size: 20px;
+  color: white;
+  margin: 10px 0 0;
+  font-weight: 400;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* ===== Tarjeta principal con diseÃƒÂ±o moderno ===== */
+.subscription-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  
+  padding: 2rem;
+  width: 100%;
+  max-width: 420px;
+  
+  /* Gradiente de fondo oscuro con mÃƒÂºltiples capas */
+  background-color: hsl(240, 15%, 9%);
+  background-image: 
+    radial-gradient(at 88% 40%, hsla(240, 15%, 9%, 1) 0px, transparent 85%),
+    radial-gradient(at 49% 30%, hsla(240, 15%, 9%, 1) 0px, transparent 85%),
+    radial-gradient(at 14% 26%, hsla(240, 15%, 9%, 1) 0px, transparent 85%),
+    radial-gradient(at 0% 64%, hsl(210, 99%, 26%) 0px, transparent 85%),
+    radial-gradient(at 41% 94%, hsl(210, 97%, 36%) 0px, transparent 85%),
+    radial-gradient(at 100% 99%, hsl(210, 94%, 13%) 0px, transparent 85%);
+  
+  border-radius: 1rem;
+  box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25) inset;
+  box-sizing: border-box;
+}
+
+/* ===== Borde animado giratorio ===== */
+.subscription-card .card__border {
+  overflow: hidden;
+  pointer-events: none;
+  
+  position: absolute;
+  z-index: -10;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  background-image: linear-gradient(
+    0deg,
+    hsl(0, 0%, 100%) -50%,
+    hsl(0, 0%, 40%) 100%
+  );
+  
+  border-radius: 1rem;
+}
+
+.subscription-card .card__border::before {
+  content: "";
+  pointer-events: none;
+  
+  position: absolute;
+  z-index: 200;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0deg);
+  transform-origin: center center;
+  
+  width: 200%;
+  height: 10rem;
+  background-image: linear-gradient(
+    0deg,
+    hsla(0, 0%, 100%, 0) 0%,
+    hsl(189, 100%, 50%) 40%,
+    hsl(189, 100%, 50%) 60%,
+    hsla(0, 0%, 40%, 0) 100%
+  );
+  
+  animation: rotate-border 8s linear infinite;
+}
+
+@keyframes rotate-border {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* ===== Marco azul interno ===== */
+.subscription-box {
+  border: 2px solid rgba(13, 71, 161, 0.3);
+  border-radius: 12px;
+  padding: 1.25rem 1rem;
+  margin: 0.5rem 0;
+  background: rgba(13, 71, 161, 0.05);
+}
+
+/* ===== Icono AL ===== */
+.al-icon {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+.al-icon img {
+  width: 36px;
+  height: 36px;
+}
+
+/* ===== SubtÃƒÂ­tulo dentro de la card ===== */
+.subscription-card h2 {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+/* ===== Lista de caracterÃƒÂ­sticas ===== */
+.subscription-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.subscription-features li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  line-height: 1.25rem;
+  color: #fff;
+}
+
+/* Check circular con SVG */
+.subscription-features li .check {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: hsl(210, 92%, 58%);
+  
+  border-radius: 50%;
+}
+
+.subscription-features li .check .check_svg {
+  width: 0.875rem;
+  height: 0.875rem;
+  fill: hsl(240, 15%, 9%);
+}
+
+.subscription-features li .list_text {
+  font-size: 0.95rem;
+  color: #fff;
+}
+
+/* ===== LÃƒÂ­nea divisoria ===== */
+.line {
+  width: 100%;
+  height: 0.1rem;
+  background-color: hsl(240, 9%, 17%);
+  border: none;
+  margin: 0.75rem 0;
+}
+
+/* ===== Opciones de suscripciÃƒÂ³n ===== */
+.sub-option {
+  text-align: center;
+  margin-top: 0.75rem;
+}
+
+.sub-option-affiliate {
+  margin-top: 1.5rem;
+}
+
+.sub-option p {
+  font-size: 1.25rem;
+  margin: 0.5rem 0;
+  font-weight: 800;
+  color: #fff;
+}
+
+.sub-text {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Badge de descuento */
+.discount-badge {
+  background: linear-gradient(135deg, #e53935, #c62828);
+  color: #fff;
+  border-radius: 12px;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.75rem;
+  margin-left: 0.5rem;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(229, 57, 53, 0.4);
+}
+
+/* ===== Botones con diseÃƒÂ±o moderno ===== */
+.subscribe-button {
+  position: relative;
+  cursor: pointer;
+  padding: 0.75rem 1rem;
+  width: 100%;
+  overflow: hidden;
+  
+  background-color: #31d9f6;
+  
+  font-size: 1rem;
+  font-weight: 800;
+  color: white;
+  text-shadow: 0px 0px 1px black;
+  
+  border: 0;
+  border-radius: 20px;
+  box-shadow: inset -1px -1px 3px white;
+  
+  transition: all 0.2s;
+}
+
+.subscribe-button::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(227, 227, 227, 0) 0%,
+    rgba(227, 227, 227, 0) 40%,
+    rgba(227, 227, 227, 0.5) 50%,
+    rgba(227, 227, 227, 0) 60%,
+    rgba(227, 227, 227, 0) 100%
+  );
+  animation: shimmer 2s linear infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.subscribe-button:active {
+  transform: translateY(1px);
+}
+
+/* ===== Efectos de hover para los botones ===== */
+.btn-hover-effect {
+  position: relative;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.btn-hover-effect:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), inset 0 -2px 25px -4px rgba(255, 255, 255, 0.5);
+}
+
+.btn-hover-effect:active:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3), inset 0 -2px 25px -4px rgba(255, 255, 255, 0.5);
+}
+
+/* Removemos el ::after del hover effect ya que ahora lo usa el shimmer */
+
+/* ===== BotÃƒÂ³n de cÃƒÂ³digo de afiliado (verde brillante) ===== */
+.btn-affiliate-code {
+  position: relative;
+  overflow: hidden;
+  background-color: #00CC00 !important;
+  color: white !important;
+  border: none;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 1rem;
+  text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: inset -1px -1px 3px rgba(255, 255, 255, 0.3);
+}
+
+.btn-affiliate-code::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(227, 227, 227, 0) 0%,
+    rgba(227, 227, 227, 0) 40%,
+    rgba(227, 227, 227, 0.5) 50%,
+    rgba(227, 227, 227, 0) 60%,
+    rgba(227, 227, 227, 0) 100%
+  );
+  animation: shimmer 2s linear infinite;
+  z-index: 1;
+}
+
+.btn-affiliate-code:hover:not(:disabled) {
+  box-shadow: 0 10px 20px rgba(0, 204, 0, 0.4), inset -1px -1px 3px rgba(255, 255, 255, 0.3);
+}
+
+.btn-affiliate-code:disabled {
+  background-color: #00ff00 !important;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* ===== Ajustes responsivos ===== */
+@media (min-width: 480px) {
+  .subscription-card {
+    max-width: 460px;
+  }
+  .subscription-features li {
+    margin: 0.65rem 0;
+  }
+}
+
+/* ===== ANIMACIÃƒâ€œN DE CARGA Y RESULTADO ===== */
+
+.purchase-status-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  backdrop-filter: blur(6px);
+}
+
+.purchase-status-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* CÃƒÂ­rculo de carga */
+.loading-circle {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  background-color: #31d9f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  animation: pulse-loading 1s infinite;
+}
+
+@keyframes pulse-loading {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(49, 217, 246, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 16px rgba(49, 217, 246, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(49, 217, 246, 0);
+  }
+}
+
+.loading-circle .square {
+  aspect-ratio: 1;
+  width: 20px;
+  border-radius: 3px;
+  background-color: #fff;
+}
+
+.loading-circle::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #1ba8c9;
+  width: 100%;
+  height: 0;
+  animation: installing 2s ease-in-out infinite;
+}
+
+@keyframes installing {
+  0% {
+    height: 0;
+  }
+  50% {
+    height: 100%;
+  }
+  100% {
+    height: 0;
+  }
+}
+
+/* Mensaje de resultado */
+.result-message {
+  background-color: transparent;
+  border: 3px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  padding: 12px 24px;
+  min-width: 220px;
+  opacity: 0;
+  transform: scale(0.8);
+  animation: showResult 0.5s ease forwards;
+}
+
+@keyframes showResult {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.result-message.success {
+  border-color: rgb(35, 174, 35);
+  color: rgb(35, 174, 35);
+}
+
+.result-message.error {
+  border-color: rgb(220, 38, 38);
+  color: rgb(220, 38, 38);
+}
+
+.result-message-text {
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* ===== MODAL DE CÃƒâ€œDIGO DE AFILIADO ===== */
+
+/* Overlay del modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  backdrop-filter: blur(4px);
+}
+
+/* Contenedor del modal */
+.modal-content {
+  position: relative;
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* BotÃƒÂ³n de cerrar */
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 2rem;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s;
+  z-index: 10;
+}
+
+.modal-close:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  transform: rotate(90deg);
+}
+
+/* ===== FLIP CARD ===== */
+.flip-card {
+  background-color: transparent;
+  width: 350px;
+  min-height: 280px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 20px;
+}
+
+.flip-card-front {
+  z-index: 2;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+/* Formulario del modal (FRONT) */
+.affiliate-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 350px;
+  padding: 20px;
+  border-radius: 20px;
+  position: relative;
+  background-color: #1a1a1a;
+  color: #fff;
+  border: 1px solid #333;
+}
+
+.form-title {
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+  color: #00bfff;
+  margin: 0;
+}
+
+.form-title::before {
+  width: 18px;
+  height: 18px;
+}
+
+.form-title::after {
+  width: 18px;
+  height: 18px;
+  animation: pulse-modal 1s linear infinite;
+}
+
+.form-title::before,
+.form-title::after {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  left: 0px;
+  background-color: #00bfff;
+}
+
+@keyframes pulse-modal {
+  from {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+.form-message {
+  font-size: 14.5px;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+
+.form-label {
+  position: relative;
+  display: block;
+  margin-top: 10px;
+}
+
+.form-input {
+  background-color: #333;
+  color: #fff;
+  width: 100%;
+  padding: 20px 5px 5px 10px;
+  outline: 0;
+  border: 1px solid rgba(105, 105, 105, 0.397);
+  border-radius: 10px;
+  font-size: medium;
+  box-sizing: border-box;
+}
+
+.form-label .form-input + span {
+  color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  left: 10px;
+  top: 0px;
+  font-size: 0.9em;
+  cursor: text;
+  transition: 0.3s ease;
+}
+
+.form-label .form-input:placeholder-shown + span {
+  top: 12.5px;
+  font-size: 0.9em;
+}
+
+.form-label .form-input:focus + span,
+.form-label .form-input:valid + span {
+  color: #00bfff;
+  top: 0px;
+  font-size: 0.7em;
+  font-weight: 600;
+}
+
+.form-input:focus {
+  border-color: #00bfff;
+}
+
+.form-submit {
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+  transition: 0.3s ease;
+  background-color: #00bfff;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.form-submit:hover {
+  background-color: #00bfff96;
+  transform: translateY(-2px);
+}
+
+.form-submit:active {
+  transform: translateY(0);
+}
+
+/* ===== TARJETA DE CONFIRMACIÃƒâ€œN (BACK) ===== */
+.confirmation-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  padding: 30px 20px;
+  background-color: #1a1a1a;
+  color: #fff;
+  border: 1px solid #333;
+  border-radius: 20px;
+  min-height: 280px;
+  box-sizing: border-box;
+}
+
+.confirmation-label {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+  text-transform: lowercase;
+}
+
+.confirmation-name {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #fff;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.confirmation-error {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #ff4444;
+  margin: 0;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.confirmation-message {
+  font-size: 14.5px;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 10px 0 20px 0;
+}
+
+.confirmation-plan {
+  margin-top: auto;
+}
+
+.confirmation-plan p {
+  font-size: 1.25rem;
+  margin: 0.5rem 0;
+  font-weight: 800;
+  color: #fff;
+}
+
+.confirmation-plan .plan-text {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
