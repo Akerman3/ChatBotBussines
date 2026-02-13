@@ -219,7 +219,9 @@ async function connectToWhatsApp() {
 const ollamaKeys = [
     process.env.OLLAMA_API_KEY,
     "633035574708423183ccebb96e54ac41.q3fuiDDxkVjWXhn2egGfAg0a",
-    "8c8db013aa214c1eaee7a13748b1d239.lPiLdPR45Vr9hujYX3CC7d6o"
+    "8c8db013aa214c1eaee7a13748b1d239.lPiLdPR45Vr9hujYX3CC7d6o",
+    "1c2ea5927c924a3084efb8ce8e4d19f6.7TTPC9HSu-hR2r6rPSg8pzp2",
+    "bdc65b254ca04270be7d4dce917f9ad1.ePjcgaPxK0lRYwvano8V5c2y"
 ].filter(k => k);
 
 let keyStatus = ollamaKeys.map((key, index) => ({
